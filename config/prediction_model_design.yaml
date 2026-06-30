@@ -1,0 +1,466 @@
+# =============================================================================
+# 世界杯冠军预测 Agent — 可解释预测模型设计文档
+# =============================================================================
+# 设计原则:
+#   1. 白盒优先 — 每个预测结果都能追溯到具体的特征和权重
+#   2. 分层可解释 — 从单场到冠军，每层都有独立的可解释输出
+#   3. 配置驱动 — 所有权重、阈值、参数均可调节，支持情景分析
+#   4. 稳定可复现 — 固定随机种子 + 确定性算法，每次运行结果一致
+# =============================================================================
+
+model:
+  name: "Multi-Factor Explainable Prediction Model"
+  version: "1.0.0-mvp"
+  type: "hybrid"  # 混合模型：规则引擎 + 统计模型 + 蒙特卡洛模拟
+  random_seed: 42
+
+  # ===========================================================================
+  # 一、预测逻辑总览 (Prediction Architecture Overview)
+  # ===========================================================================
+  #
+  #  ┌─────────────────────────────────────────────────────────────┐
+  #  │                    预测架构 (4 层)                           │
+  #  │                                                             │
+  #  │  Layer 0: 球队评分引擎                                       │
+  #  │  ┌──────────────────────────────────────────────────────┐  │
+  #  │  │ 输入: 历史战绩 + FIFA排名 + 攻防数据 + 球员能力 + 状态  │  │
+  #  │  │ 输出: 每支球队的 0-100 综合评分 (含 5 维度分项分)     │  │
+  #  │  └──────────────────────┬───────────────────────────────┘  │
+  #  │                         │                                   │
+  #  │                         ▼                                   │
+  #  │  Layer 1: 单场预测器 (Poisson 进球期望模型)                 │
+  #  │  ┌──────────────────────────────────────────────────────┐  │
+  #  │  │ 输入: 两队评分 + 历史交锋 + 赛程因素                   │  │
+  #  │  │ 输出: P(胜) / P(平) / P(负) + 期望进球数              │  │
+  #  │  │ 可解释: 每个概率变化的因子归因                         │  │
+  #  │  └──────────────────────┬───────────────────────────────┘  │
+  #  │                         │                                   │
+  #  │                         ▼                                   │
+  #  │  Layer 2: 赛程推演引擎                                      │
+  #  │  ┌──────────────────────────────────────────────────────┐  │
+  #  │  │ 小组赛: 泊松模拟 × 3 轮 → 积分榜 → 出线队             │  │
+  #  │  │ 淘汰赛: 递归调用 Layer 1 → 胜者晋级 → 赛程树          │  │
+  #  │  └──────────────────────┬───────────────────────────────┘  │
+  #  │                         │                                   │
+  #  │                         ▼                                   │
+  #  │  Layer 3: 蒙特卡洛聚合器                                    │
+  #  │  ┌──────────────────────────────────────────────────────┐  │
+  #  │  │ 运行 Layer 2 × N=10000 次                             │  │
+  #  │  │ 统计: 夺冠次数 → 夺冠概率 + 95% CI                    │  │
+  #  │  │ 统计: 各轮晋级次数 → 晋级概率分布                      │  │
+  #  │  │ 统计: 路径出现次数 → 最可能晋级路径                    │  │
+  #  │  └──────────────────────────────────────────────────────┘  │
+  #  └─────────────────────────────────────────────────────────────┘
+  #
+  #  关键设计: 每一层的输出都可独立解释，不依赖黑盒。
+  #  用户可以从"冠军概率"一路追溯到"某支球队的某个特征评分"。
+
+  # ===========================================================================
+  # 二、球队评分体系 (Team Rating System)
+  # ===========================================================================
+  #
+  #  综合评分 = Σ(维度得分 × 维度权重)
+  #  所有维度得分归一化到 [0, 100]，确保可比较性和直观性
+  #
+  team_rating:
+    # -----------------------------------------------------------------------
+    # 维度 1: 历史战绩权重 (Historical Performance)
+    # -----------------------------------------------------------------------
+    # 数据来源: kaggle_worldcup (WorldCups.csv + WorldCupMatches.csv)
+    # 计算逻辑:
+    #   基础分 = 50 (所有球队的起评分)
+    #   + 世界杯冠军: +10分/次 (最多 +50)
+    #   + 世界杯亚军: +6分/次  (最多 +30)
+    #   + 世界杯四强: +3分/次  (最多 +15)
+    #   + 世界杯参赛: +1分/次  (最多 +20)
+    #   + 洲际杯冠军: +5分/次  (最多 +25)
+    #   衰减因子: 1980年前的成绩 × 0.5 (远古成绩权重减半)
+    #
+    historical:
+      weight: 0.20
+      display_name: "历史底蕴"
+      display_name_en: "Historical Performance"
+      base_score: 50
+      bonuses:
+        world_cup_champion: 10       # 世界杯冠军加分
+        world_cup_runner_up: 6       # 世界杯亚军加分
+        world_cup_semi_final: 3      # 世界杯四强加分
+        world_cup_participation: 1   # 世界杯参赛加分
+        continental_champion: 5      # 洲际杯冠军加分 (欧洲杯/美洲杯等)
+      caps:
+        champion_max: 50             # 冠军加分上限
+        runner_up_max: 30
+        semi_final_max: 15
+        participation_max: 20
+        continental_max: 25
+      decay:
+        pre_1980_factor: 0.5         # 1980年前成绩衰减因子
+
+    # -----------------------------------------------------------------------
+    # 维度 2: FIFA 排名 / 实力权重 (Strength Rating)
+    # -----------------------------------------------------------------------
+    # 数据来源: kaggle_fifa_rankings
+    # 计算逻辑:
+    #   取世界杯赛前最新一期 FIFA 排名
+    #   归一化公式: score = 100 × (1 - (rank - 1) / max_rank)
+    #   例如: 排名第 1 → 100分, 排名第 50 → 0分
+    #   如有 ELO 评分, 与 FIFA 排名加权平均 (权重 7:3)
+    #
+    strength:
+      weight: 0.30
+      display_name: "综合实力"
+      display_name_en: "Team Strength"
+      normalization: "linear_rank"   # 线性排名归一化
+      max_rank: 211                  # FIFA 成员总数
+      elo_weight: 0.3                # ELO 评分在实力维度中的权重
+      fifa_weight: 0.7               # FIFA 排名在实力维度中的权重
+      elo_normalization:             # ELO 归一化参数
+        min_elo: 500                 #   历史最低 ELO (~500)
+        max_elo: 2200                #   历史最高 ELO (~2200)
+        formula: "100 * (elo - 500) / (2200 - 500)"
+
+    # -----------------------------------------------------------------------
+    # 维度 3: 进攻/防守权重 (Attack & Defense)
+    # -----------------------------------------------------------------------
+    # 数据来源: kaggle_intl_matches (近 20 场国家队比赛)
+    # 计算逻辑:
+    #   进攻分 = 近 20 场场均进球 / 联赛平均进球 × 50
+    #   防守分 = (1 - 近 20 场场均失球 / 联赛平均失球) × 50
+    #   综合 = 进攻分 + 防守分
+    #   对手强度修正: 对手 FIFA 排名越高，进球/失球权重越大
+    #
+    attack_defense:
+      weight: 0.20
+      display_name: "攻防效率"
+      display_name_en: "Attack & Defense"
+      recent_matches: 20             # 取最近 N 场计算
+      league_avg_goals: 1.35         # 国家队比赛场均进球 (历史均值)
+      league_avg_conceded: 1.35      # 国家队比赛场均失球
+      opponent_strength_factor: true # 是否启用对手强度修正
+      sub_weights:
+        attack: 0.50                 #   进攻在攻防维度中的权重
+        defense: 0.50                #   防守在攻防维度中的权重
+
+    # -----------------------------------------------------------------------
+    # 维度 4: 球员能力权重 (Player Quality)
+    # -----------------------------------------------------------------------
+    # 数据来源: kaggle_fifa_players (FIFA 23 游戏评分)
+    # 计算逻辑:
+    #   取该国家队所有球员
+    #   首发 11 人 (评分最高的 11 人): 权重 60%
+    #   替补球员 (第 12-23 名): 权重 40%
+    #   归一化: score = average_rating × 100 / 99
+    #   特殊情况: 如果某队球员数据缺失, 使用 FIFA 排名作为代理
+    #
+    player_quality:
+      weight: 0.15
+      display_name: "球员班底"
+      display_name_en: "Player Quality"
+      data_source: "kaggle_fifa_players"
+      top_n_starters: 11             # 首发人数
+      top_n_squad: 23                # 大名单人数
+      starter_weight: 0.60           # 首发权重
+      bench_weight: 0.40             # 替补权重
+      max_rating: 99                 # FIFA 游戏评分上限
+      fallback_on_missing: "fifa_rank"  # 缺失时用 FIFA 排名替代
+
+    # -----------------------------------------------------------------------
+    # 维度 5: 近期状态权重 (Recent Form)
+    # -----------------------------------------------------------------------
+    # 数据来源: kaggle_intl_matches (近 10 场)
+    # 计算逻辑:
+    #   基础分 = 近 10 场胜率 × 100
+    #   动量修正:
+    #     近 3 场连胜 → +5 分
+    #     近 5 场不败 → +3 分
+    #     近 3 场连败 → -5 分
+    #   对手强度修正: 击败强队额外加分
+    #
+    recent_form:
+      weight: 0.15
+      display_name: "近期状态"
+      display_name_en: "Recent Form"
+      recent_matches: 10             # 取最近 N 场
+      momentum:
+        win_streak_3_bonus: 5        #   3 连胜加分
+        unbeaten_5_bonus: 3          #   5 场不败加分
+        lose_streak_3_penalty: -5    #   3 连败扣分
+      strong_opponent_threshold: 20  #   强队定义: FIFA 排名 ≤ 20
+      strong_opponent_win_bonus: 2   #   击败强队额外加分 (每场)
+
+  # ===========================================================================
+  # 三、小组赛预测规则 (Group Stage Prediction)
+  # ===========================================================================
+  #
+  #  核心模型: 独立泊松分布 (Independent Poisson)
+  #  原理:
+  #    假设两队进球数独立服从泊松分布:
+  #      Goals_A ~ Poisson(λ_A)
+  #      Goals_B ~ Poisson(λ_B)
+  #    其中 λ 由球队攻击力和对手防守力决定:
+  #      λ_A = league_avg × attack_strength_A × defense_strength_B × home_adv
+  #      λ_B = league_avg × attack_strength_B × defense_strength_A
+  #
+  #  为什么不用更复杂的模型?
+  #    - 双变量泊松 (Bivariate Poisson) 更准确, 但可解释性差
+  #    - 独立泊松的误差在淘汰赛制下可接受 (< 3%)
+  #    - MVP 阶段优先可解释性
+  #
+  group_stage:
+    model: "independent_poisson"
+
+    # 联赛平均进球 (基于 2010-2022 四届世界杯统计)
+    league_avg_goals: 1.32
+
+    # 攻击力 = 攻防维度中"进攻分"的映射
+    #   进攻分为 0-50, 映射到攻击力系数 [0.5, 1.5]
+    attack_strength:
+      min_factor: 0.5
+      max_factor: 1.5
+      formula: "0.5 + attack_score / 50.0"
+
+    # 防守力 = 1 - (攻防维度中"防守分"的映射)
+    #   防守分为 0-50, 防守力系数 [1.5, 0.5] (防守分越高, 对手期望进球越低)
+    defense_strength:
+      min_factor: 0.5
+      max_factor: 1.5
+      formula: "1.5 - defense_score / 50.0"
+
+    # 主场优势 (东道主加成)
+    home_advantage: 1.15             # 东道主进球期望 × 1.15
+    home_advantage_teams: ["CAN", "MEX", "USA"]  # 2026 联合东道主
+
+    # 小组赛场次
+    matches_per_group: 3             # 48 队赛制: 每组 3 队, 每队 2 场
+    teams_per_group: 3
+
+    # 出线规则
+    advancement:
+      positions: [1, 2]              # 每组前 2 名出线
+      points_for_win: 3
+      points_for_draw: 1
+      points_for_loss: 0
+      tiebreakers:
+        - "goal_difference"          # 1. 净胜球
+        - "goals_scored"             # 2. 总进球
+        - "head_to_head"             # 3. 相互战绩
+        - "fair_play_points"         # 4. 公平竞赛积分
+
+    # 胜平负概率计算 (从泊松分布推导)
+    #   P(Win)  = Σ_{i>j} P(λ_A=i) × P(λ_B=j)
+    #   P(Draw) = Σ_{i=j} P(λ_A=i) × P(λ_B=j)
+    #   P(Loss) = Σ_{i<j} P(λ_A=i) × P(λ_B=j)
+    #   实际计算时截断到 k_max=10 (P(>10球) ≈ 0)
+    poisson:
+      k_max: 10                      # 进球数截断上限
+
+  # ===========================================================================
+  # 四、淘汰赛预测规则 (Knockout Stage Prediction)
+  # ===========================================================================
+  #
+  #  淘汰赛与小组赛的关键区别: 必须分出胜负 (无平局)
+  #
+  #  三阶段制胜模型:
+  #    Stage 1: 常规时间 90 分钟 → 泊松模型预测胜/平/负
+  #    Stage 2: 加时赛 30 分钟 → 简化泊松 (λ 缩小为 1/3)
+  #    Stage 3: 点球大战 → 基于历史点球胜率
+  #
+  #  最终晋级概率:
+  #    P(advance) = P(win_90)
+  #               + P(draw_90) × [P(win_extra) + P(draw_extra) × P(win_penalty)]
+  #
+  knockout:
+    # Stage 1: 常规时间
+    regular_time:
+      model: "independent_poisson"
+      use_same_params_as_group: true
+
+    # Stage 2: 加时赛 (进球期望降低)
+    extra_time:
+      lambda_factor: 0.33            # 30分钟 ≈ 90分钟的 1/3
+      note: "加时赛双方体力下降, 进球率降低"
+
+    # Stage 3: 点球大战
+    penalties:
+      # 默认点球胜率: 基于历史数据, 强队在点球中优势很小
+      base_strong_team_win_rate: 0.55  # 评分更高的队点球胜率
+      base_weak_team_win_rate: 0.45
+      # 如果有门将扑点数据, 可调整
+      goalkeeper_factor_enabled: false  # MVP 阶段不启用 (数据缺失)
+
+  # ===========================================================================
+  # 五、冠军预测方式 (Champion Prediction)
+  # ===========================================================================
+  #
+  #  蒙特卡洛模拟 (Monte Carlo Simulation)
+  #  核心思想: 不确定性来自比赛结果的不确定性
+  #  通过对每场比赛的概率采样, 模拟 N 次完整世界杯
+  #
+  monte_carlo:
+    enabled: true
+    num_simulations: 10000           # 模拟次数
+    min_simulations_for_ci: 5000     # 最小模拟次数 (计算置信区间)
+    random_seed: 42                  # 固定随机种子, 确保可复现
+
+    # 模拟流程:
+    #   For sim in 1..10000:
+    #     1. 初始化赛程树 (从配置文件加载)
+    #     2. 小组赛:
+    #        对每组每场比赛:
+    #          - 调用泊松模型 → P(胜), P(平), P(负)
+    #          - 按概率采样实际比分
+    #          - 累加积分 → 排序 → 前 2 名出线
+    #     3. 淘汰赛:
+    #        从 32 强开始, 逐轮推进:
+    #          - 调用三阶段制胜模型 → P(晋级)
+    #          - 按概率采样胜者
+    #          - 胜者晋级到下一轮
+    #     4. 记录: 冠军、各队晋级轮次、完整路径
+    #
+    #  聚合统计:
+    #     - 夺冠概率 = 该队夺冠次数 / 10000
+    #     - 95% 置信区间: Wilson 二项分布置信区间
+    #     - 晋级各轮概率 = 该队进入某轮次数 / 10000
+
+    # 置信区间计算
+    confidence_interval:
+      method: "wilson"                # Wilson score interval
+      alpha: 0.05                     # 95% 置信水平
+
+    # 路径追踪
+    path_tracking:
+      enabled: true                   # 是否追踪每支球队的晋级路径
+      max_paths_per_team: 3           # 每队保留最多 3 条最可能路径
+
+  # ===========================================================================
+  # 六、可解释性因子归因 (Explainability Factor Attribution)
+  # ===========================================================================
+  #
+  #  对于每场比赛的预测, 计算每个因素对最终概率的"贡献度":
+  #
+  #  方法: 单项特征消融 (Single Feature Ablation)
+  #    - 基准预测: 使用全部特征 → P0
+  #    - 消融特征 i: 将该特征置为中立值 → Pi
+  #    - 贡献度 = |P0 - Pi|  (概率变化的绝对值)
+  #    - 方向: 如果消除后概率降低 → 该特征是优势因素
+  #
+  explainability:
+    method: "feature_ablation"        # 单项特征消融法
+
+    # 需要解释的特征列表 (对应球队评分的 5 个维度)
+    explainable_factors:
+      - id: "historical"
+        display_name: "历史底蕴"
+        neutral_value: 50             # 消融时使用的中立值
+      - id: "strength"
+        display_name: "FIFA 排名"
+        neutral_value: 50
+      - id: "attack_defense"
+        display_name: "攻防效率"
+        neutral_value: 50
+      - id: "player_quality"
+        display_name: "球员班底"
+        neutral_value: 50
+      - id: "recent_form"
+        display_name: "近期状态"
+        neutral_value: 50
+      - id: "home_advantage"
+        display_name: "东道主优势"
+        neutral_value: 0              # 消融即移除主场优势
+      - id: "head_to_head"
+        display_name: "历史交锋"
+        neutral_value: 0              # 消融即忽略交锋记录
+
+    # 贡献度阈值: 只展示贡献度 > threshold 的因子
+    contribution_threshold: 0.01      # 概率变化 > 1% 才展示
+
+    # 每场比赛最多展示的 top 因子数
+    max_factors_displayed: 5
+
+  # ===========================================================================
+  # 七、输出格式 (Output Format)
+  # ===========================================================================
+  #
+  #  前端需要三个层级的输出:
+  #   1. 冠军概览 → 夺冠概率排行榜
+  #   2. 赛程树 → 完整的淘汰赛对阵 + 概率
+  #   3. 单场详情 → 胜负因子归因
+  #
+  output_format:
+    # API 返回结构见下方示例
+
+    # ---- Level 1: 冠军概览 ----
+    champion_overview:
+      description: "每条记录代表一支球队的夺冠预测"
+      fields:
+        - team_id               # "BRA"
+        - team_name             # "巴西"
+        - champion_prob         # 0.185 (18.5%)
+        - champion_rank         # 1
+        - confidence_95_low     # 0.178
+        - confidence_95_high    # 0.192
+        - final_prob            # 0.320
+        - semi_prob             # 0.550
+        - quarter_prob          # 0.780
+        - round_16_prob         # 0.950
+        - overall_rating        # 87.3 (综合评分)
+        - rating_breakdown      # {historical: 92, strength: 88, ...}
+
+    # ---- Level 2: 赛程树节点 ----
+    bracket_node:
+      description: "赛程树中的单个节点"
+      fields:
+        - node_id               # "QF_01"
+        - stage                 # "quarter_final"
+        - round_order           # 3
+        - team_a_id             # "BRA"
+        - team_a_name           # "巴西"
+        - team_b_id             # "ARG"
+        - team_b_name           # "阿根廷"
+        - prob_team_a_advance   # 0.62
+        - prob_team_b_advance   # 0.38
+        - is_predicted          # true
+        - predicted_score       # "2-1" (最可能的比分)
+        - top_factors           # [{factor, impact, direction}] (简要)
+
+    # ---- Level 3: 单场胜负因子 ----
+    match_explanation:
+      description: "单场比赛的完整可解释分析"
+      fields:
+        - match_info            # {teams, stage, probabilities, expected_goals}
+        - factors               # [{name, value_a, value_b, impact, direction, display_text}]
+        - score_distribution    # [{score, probability}] (比分概率分布)
+        - stage_probabilities   # {win_90, draw_90, win_extra, win_penalty} (淘汰赛)
+
+  # ===========================================================================
+  # 八、稳定性与可复现方案
+  # ===========================================================================
+  stability:
+    random_seed: 42               # 全局随机种子
+    numpy_seed: 42
+    poisson_k_max: 10             # 泊松截断上限 (固定)
+
+    # 确定性策略:
+    #   1. 所有随机操作使用 numpy.random.RandomState(42)
+    #   2. 蒙特卡洛模拟的每次迭代使用独立种子 (seed + sim_index)
+    #   3. 泊松概率表预计算并缓存
+    #   4. 球队评分使用确定性公式 (无随机成分)
+
+    # 敏感性分析 (可选, v1.1):
+    #   对关键权重 (±10%) 进行敏感性测试
+    #   输出权重变化的夺冠概率变化范围
+
+    # 缓存策略:
+    cache_single_match: true      # 缓存单场预测结果 (相同的两队)
+    cache_ttl_minutes: 60         # 缓存有效期
+
+  # ===========================================================================
+  # 九、简化版伪代码参考
+  # ===========================================================================
+  #
+  # 完整实现见 src/prediction/ 目录。
+  # 以下伪代码描述核心算法流程, 对应实现文件:
+  #   - src/prediction/team_rating.py   → 球队评分引擎
+  #   - src/prediction/match_predictor.py → 单场预测器
+  #   - src/prediction/tournament_sim.py  → 赛程模拟器
+  #   - src/prediction/explainer.py       → 可解释性引擎

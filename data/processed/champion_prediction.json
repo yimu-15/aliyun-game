@@ -1,0 +1,719 @@
+{
+  "model_version": "1.0.0-mvp",
+  "generated_at": "2026-06-30 19:36:39",
+  "num_teams": 32,
+  "rankings": [
+    {
+      "rank": 1,
+      "team_id": "MEX",
+      "team_name": "墨西哥",
+      "champion_prob": 0.0467,
+      "champion_prob_pct": "4.67%",
+      "ci_95": [
+        0.0427,
+        0.051
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0829,
+        "quarter": 0.1732,
+        "round_16": 0.3183
+      },
+      "overall_rating": 34.9
+    },
+    {
+      "rank": 2,
+      "team_id": "USA",
+      "team_name": "美国",
+      "champion_prob": 0.0455,
+      "champion_prob_pct": "4.55%",
+      "ci_95": [
+        0.0416,
+        0.0498
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0919,
+        "quarter": 0.1604,
+        "round_16": 0.2828
+      },
+      "overall_rating": 34.5
+    },
+    {
+      "rank": 3,
+      "team_id": "CAN",
+      "team_name": "加拿大",
+      "champion_prob": 0.0446,
+      "champion_prob_pct": "4.46%",
+      "ci_95": [
+        0.0407,
+        0.0488
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0852,
+        "quarter": 0.1764,
+        "round_16": 0.3053
+      },
+      "overall_rating": 32.6
+    },
+    {
+      "rank": 4,
+      "team_id": "URU",
+      "team_name": "乌拉圭",
+      "champion_prob": 0.0411,
+      "champion_prob_pct": "4.11%",
+      "ci_95": [
+        0.0374,
+        0.0452
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0795,
+        "quarter": 0.1597,
+        "round_16": 0.3138
+      },
+      "overall_rating": 35.6
+    },
+    {
+      "rank": 5,
+      "team_id": "CRO",
+      "team_name": "克罗地亚",
+      "champion_prob": 0.0401,
+      "champion_prob_pct": "4.01%",
+      "ci_95": [
+        0.0364,
+        0.0441
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.08,
+        "quarter": 0.1548,
+        "round_16": 0.3029
+      },
+      "overall_rating": 34.6
+    },
+    {
+      "rank": 6,
+      "team_id": "AUS",
+      "team_name": "澳大利亚",
+      "champion_prob": 0.0393,
+      "champion_prob_pct": "3.93%",
+      "ci_95": [
+        0.0357,
+        0.0433
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0771,
+        "quarter": 0.1546,
+        "round_16": 0.2957
+      },
+      "overall_rating": 33.8
+    },
+    {
+      "rank": 7,
+      "team_id": "MAR",
+      "team_name": "摩洛哥",
+      "champion_prob": 0.0385,
+      "champion_prob_pct": "3.85%",
+      "ci_95": [
+        0.0349,
+        0.0425
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0787,
+        "quarter": 0.1543,
+        "round_16": 0.287
+      },
+      "overall_rating": 35.8
+    },
+    {
+      "rank": 8,
+      "team_id": "ARG",
+      "team_name": "阿根廷",
+      "champion_prob": 0.037,
+      "champion_prob_pct": "3.70%",
+      "ci_95": [
+        0.0335,
+        0.0409
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0706,
+        "quarter": 0.1342,
+        "round_16": 0.2579
+      },
+      "overall_rating": 37.4
+    },
+    {
+      "rank": 9,
+      "team_id": "POL",
+      "team_name": "波兰",
+      "champion_prob": 0.0362,
+      "champion_prob_pct": "3.62%",
+      "ci_95": [
+        0.0327,
+        0.04
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0749,
+        "quarter": 0.1561,
+        "round_16": 0.3048
+      },
+      "overall_rating": 31.9
+    },
+    {
+      "rank": 10,
+      "team_id": "ESP",
+      "team_name": "西班牙",
+      "champion_prob": 0.0348,
+      "champion_prob_pct": "3.48%",
+      "ci_95": [
+        0.0314,
+        0.0386
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0644,
+        "quarter": 0.1249,
+        "round_16": 0.2627
+      },
+      "overall_rating": 36.2
+    },
+    {
+      "rank": 11,
+      "team_id": "IRN",
+      "team_name": "伊朗",
+      "champion_prob": 0.0345,
+      "champion_prob_pct": "3.45%",
+      "ci_95": [
+        0.0311,
+        0.0383
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.07,
+        "quarter": 0.1263,
+        "round_16": 0.2632
+      },
+      "overall_rating": 32.7
+    },
+    {
+      "rank": 12,
+      "team_id": "FRA",
+      "team_name": "法国",
+      "champion_prob": 0.0343,
+      "champion_prob_pct": "3.43%",
+      "ci_95": [
+        0.0309,
+        0.038
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0666,
+        "quarter": 0.1329,
+        "round_16": 0.2551
+      },
+      "overall_rating": 38.2
+    },
+    {
+      "rank": 13,
+      "team_id": "TUN",
+      "team_name": "突尼斯",
+      "champion_prob": 0.0343,
+      "champion_prob_pct": "3.43%",
+      "ci_95": [
+        0.0309,
+        0.038
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0706,
+        "quarter": 0.1484,
+        "round_16": 0.3096
+      },
+      "overall_rating": 32.3
+    },
+    {
+      "rank": 14,
+      "team_id": "ENG",
+      "team_name": "英格兰",
+      "champion_prob": 0.0342,
+      "champion_prob_pct": "3.42%",
+      "ci_95": [
+        0.0308,
+        0.0379
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0688,
+        "quarter": 0.1261,
+        "round_16": 0.2442
+      },
+      "overall_rating": 36.4
+    },
+    {
+      "rank": 15,
+      "team_id": "POR",
+      "team_name": "葡萄牙",
+      "champion_prob": 0.0342,
+      "champion_prob_pct": "3.42%",
+      "ci_95": [
+        0.0308,
+        0.0379
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0662,
+        "quarter": 0.1274,
+        "round_16": 0.2596
+      },
+      "overall_rating": 35.3
+    },
+    {
+      "rank": 16,
+      "team_id": "BRA",
+      "team_name": "巴西",
+      "champion_prob": 0.034,
+      "champion_prob_pct": "3.40%",
+      "ci_95": [
+        0.0306,
+        0.0377
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0662,
+        "quarter": 0.1259,
+        "round_16": 0.2428
+      },
+      "overall_rating": 38.0
+    },
+    {
+      "rank": 17,
+      "team_id": "SRB",
+      "team_name": "塞尔维亚",
+      "champion_prob": 0.0336,
+      "champion_prob_pct": "3.36%",
+      "ci_95": [
+        0.0302,
+        0.0373
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0659,
+        "quarter": 0.1239,
+        "round_16": 0.2577
+      },
+      "overall_rating": 34.0
+    },
+    {
+      "rank": 18,
+      "team_id": "NED",
+      "team_name": "荷兰",
+      "champion_prob": 0.0333,
+      "champion_prob_pct": "3.33%",
+      "ci_95": [
+        0.03,
+        0.037
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0681,
+        "quarter": 0.1314,
+        "round_16": 0.2627
+      },
+      "overall_rating": 34.1
+    },
+    {
+      "rank": 19,
+      "team_id": "COL",
+      "team_name": "哥伦比亚",
+      "champion_prob": 0.0326,
+      "champion_prob_pct": "3.26%",
+      "ci_95": [
+        0.0293,
+        0.0363
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0684,
+        "quarter": 0.1375,
+        "round_16": 0.2657
+      },
+      "overall_rating": 34.1
+    },
+    {
+      "rank": 20,
+      "team_id": "SEN",
+      "team_name": "塞内加尔",
+      "champion_prob": 0.0323,
+      "champion_prob_pct": "3.23%",
+      "ci_95": [
+        0.029,
+        0.0359
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0631,
+        "quarter": 0.1241,
+        "round_16": 0.2476
+      },
+      "overall_rating": 33.2
+    },
+    {
+      "rank": 21,
+      "team_id": "WAL",
+      "team_name": "威尔士",
+      "champion_prob": 0.0312,
+      "champion_prob_pct": "3.12%",
+      "ci_95": [
+        0.028,
+        0.0348
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0615,
+        "quarter": 0.1283,
+        "round_16": 0.2679
+      },
+      "overall_rating": 31.8
+    },
+    {
+      "rank": 22,
+      "team_id": "DEN",
+      "team_name": "丹麦",
+      "champion_prob": 0.0309,
+      "champion_prob_pct": "3.09%",
+      "ci_95": [
+        0.0277,
+        0.0345
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0636,
+        "quarter": 0.1225,
+        "round_16": 0.2382
+      },
+      "overall_rating": 33.6
+    },
+    {
+      "rank": 23,
+      "team_id": "KOR",
+      "team_name": "韩国",
+      "champion_prob": 0.0304,
+      "champion_prob_pct": "3.04%",
+      "ci_95": [
+        0.0272,
+        0.0339
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0599,
+        "quarter": 0.1123,
+        "round_16": 0.2314
+      },
+      "overall_rating": 34.3
+    },
+    {
+      "rank": 24,
+      "team_id": "AUT",
+      "team_name": "奥地利",
+      "champion_prob": 0.0292,
+      "champion_prob_pct": "2.92%",
+      "ci_95": [
+        0.0261,
+        0.0327
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0602,
+        "quarter": 0.1178,
+        "round_16": 0.2355
+      },
+      "overall_rating": 31.6
+    },
+    {
+      "rank": 25,
+      "team_id": "QAT",
+      "team_name": "卡塔尔",
+      "champion_prob": 0.0284,
+      "champion_prob_pct": "2.84%",
+      "ci_95": [
+        0.0253,
+        0.0318
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0552,
+        "quarter": 0.1185,
+        "round_16": 0.2361
+      },
+      "overall_rating": 32.1
+    },
+    {
+      "rank": 26,
+      "team_id": "SUI",
+      "team_name": "瑞士",
+      "champion_prob": 0.0262,
+      "champion_prob_pct": "2.62%",
+      "ci_95": [
+        0.0232,
+        0.0295
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0571,
+        "quarter": 0.1127,
+        "round_16": 0.2436
+      },
+      "overall_rating": 31.6
+    },
+    {
+      "rank": 27,
+      "team_id": "BEL",
+      "team_name": "比利时",
+      "champion_prob": 0.0226,
+      "champion_prob_pct": "2.26%",
+      "ci_95": [
+        0.0199,
+        0.0257
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0462,
+        "quarter": 0.1069,
+        "round_16": 0.2306
+      },
+      "overall_rating": 31.9
+    },
+    {
+      "rank": 28,
+      "team_id": "GER",
+      "team_name": "德国",
+      "champion_prob": 0.022,
+      "champion_prob_pct": "2.20%",
+      "ci_95": [
+        0.0193,
+        0.0251
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0466,
+        "quarter": 0.0972,
+        "round_16": 0.215
+      },
+      "overall_rating": 35.4
+    },
+    {
+      "rank": 29,
+      "team_id": "KSA",
+      "team_name": "沙特阿拉伯",
+      "champion_prob": 0.0122,
+      "champion_prob_pct": "1.22%",
+      "ci_95": [
+        0.0102,
+        0.0145
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0287,
+        "quarter": 0.0725,
+        "round_16": 0.1629
+      },
+      "overall_rating": 29.2
+    },
+    {
+      "rank": 30,
+      "team_id": "ITA",
+      "team_name": "意大利",
+      "champion_prob": 0.0114,
+      "champion_prob_pct": "1.14%",
+      "ci_95": [
+        0.0095,
+        0.0137
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0248,
+        "quarter": 0.061,
+        "round_16": 0.1527
+      },
+      "overall_rating": 32.3
+    },
+    {
+      "rank": 31,
+      "team_id": "JPN",
+      "team_name": "日本",
+      "champion_prob": 0.009,
+      "champion_prob_pct": "0.90%",
+      "ci_95": [
+        0.0073,
+        0.011
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.022,
+        "quarter": 0.0526,
+        "round_16": 0.129
+      },
+      "overall_rating": 30.3
+    },
+    {
+      "rank": 32,
+      "team_id": "SWE",
+      "team_name": "瑞典",
+      "champion_prob": 0.0054,
+      "champion_prob_pct": "0.54%",
+      "ci_95": [
+        0.0041,
+        0.007
+      ],
+      "advancement": {
+        "final": 0.0,
+        "semi": 0.0151,
+        "quarter": 0.0452,
+        "round_16": 0.1177
+      },
+      "overall_rating": 27.3
+    }
+  ],
+  "bracket": {
+    "final": {
+      "stage": "final",
+      "team_a": {
+        "id": "MEX",
+        "name": "墨西哥",
+        "advance_prob": 0.507
+      },
+      "team_b": {
+        "id": "USA",
+        "name": "美国",
+        "advance_prob": 0.493
+      }
+    },
+    "semi_finals": [
+      {
+        "stage": "semi",
+        "team_a": {
+          "id": "MEX",
+          "name": "墨西哥",
+          "advance_prob": 0.507
+        },
+        "team_b": {
+          "id": "USA",
+          "name": "美国",
+          "advance_prob": 0.493
+        }
+      },
+      {
+        "stage": "semi",
+        "team_a": {
+          "id": "CAN",
+          "name": "加拿大",
+          "advance_prob": 0.493
+        },
+        "team_b": {
+          "id": "URU",
+          "name": "乌拉圭",
+          "advance_prob": 0.507
+        }
+      }
+    ],
+    "quarter_finals": [
+      {
+        "stage": "quarter",
+        "team_a": {
+          "id": "MEX",
+          "name": "墨西哥",
+          "advance_prob": 0.507
+        },
+        "team_b": {
+          "id": "USA",
+          "name": "美国",
+          "advance_prob": 0.493
+        }
+      },
+      {
+        "stage": "quarter",
+        "team_a": {
+          "id": "CAN",
+          "name": "加拿大",
+          "advance_prob": 0.493
+        },
+        "team_b": {
+          "id": "URU",
+          "name": "乌拉圭",
+          "advance_prob": 0.507
+        }
+      },
+      {
+        "stage": "quarter",
+        "team_a": {
+          "id": "CRO",
+          "name": "克罗地亚",
+          "advance_prob": 0.507
+        },
+        "team_b": {
+          "id": "AUS",
+          "name": "澳大利亚",
+          "advance_prob": 0.493
+        }
+      },
+      {
+        "stage": "quarter",
+        "team_a": {
+          "id": "MAR",
+          "name": "摩洛哥",
+          "advance_prob": 0.493
+        },
+        "team_b": {
+          "id": "ARG",
+          "name": "阿根廷",
+          "advance_prob": 0.507
+        }
+      }
+    ]
+  },
+  "top_match_preview": {
+    "match": "MEX vs USA",
+    "prediction": {
+      "MEX_win": 0.3692,
+      "draw": 0.2616,
+      "USA_win": 0.3692
+    },
+    "expected_goals": {
+      "MEX": 1.32,
+      "USA": 1.32
+    },
+    "best_score": "1-1",
+    "factors": {
+      "fifa_rank": {
+        "name": "FIFA排名",
+        "value_a": 44.50125453024812,
+        "value_b": 43.1318650683022,
+        "advantage": "team_a"
+      },
+      "attack_defense": {
+        "name": "攻防效率",
+        "value_a": 50,
+        "value_b": 50,
+        "advantage": "team_b"
+      },
+      "recent_form": {
+        "name": "近期状态",
+        "value_a": 25.0,
+        "value_b": 25.0,
+        "advantage": "team_b"
+      },
+      "historical": {
+        "name": "历史底蕴",
+        "value_a": 13.157894736842104,
+        "value_b": 13.157894736842104,
+        "advantage": "team_b"
+      }
+    }
+  }
+}

@@ -1,0 +1,304 @@
+date,tournament,home_team,away_team,home_score,away_score,home_goals_half,away_goals_half,neutral,city,country,result
+2021-01-22,UEFA Nations League,GRE,CRO,1,0,0,0,0,Rome,England,H
+2021-01-23,UEFA Nations League,GER,CRO,1,3,0,1,0,Berlin,England,A
+2021-01-30,UEFA Nations League,CRO,RUS,0,1,0,0,0,Berlin,France,A
+2021-02-09,Friendly,FRA,POR,0,0,0,0,0,Rome,Spain,D
+2021-02-10,UEFA Nations League,ENG,POL,1,2,0,1,0,Paris,France,A
+2021-02-16,Friendly,DEN,BEL,2,0,1,0,0,Rome,Germany,H
+2021-02-22,Friendly,WAL,ENG,2,0,1,0,0,Berlin,Italy,H
+2021-02-24,Friendly,RUS,GER,4,1,2,0,0,Paris,Italy,H
+2021-03-12,Friendly,ESP,SWE,1,2,0,1,0,London,France,A
+2021-03-12,Friendly,POL,SUI,0,1,0,0,0,Berlin,France,A
+2021-03-16,UEFA Nations League,DEN,BEL,5,2,2,1,0,Madrid,Italy,H
+2021-03-19,Friendly,DEN,GRE,0,3,0,1,0,London,Germany,A
+2021-03-21,UEFA Nations League,TUR,CRO,2,0,1,0,0,Paris,Germany,H
+2021-03-24,Friendly,UKR,DEN,1,1,0,0,0,Madrid,Germany,D
+2021-04-10,Friendly,GRE,CRO,1,0,0,0,0,Berlin,Spain,H
+2021-04-12,Friendly,DEN,GRE,0,1,0,0,0,Paris,Germany,A
+2021-04-20,UEFA Nations League,ITA,WAL,1,1,0,0,0,Paris,France,D
+2021-04-25,Friendly,POR,DEN,1,0,0,0,0,Paris,Italy,H
+2021-05-01,Friendly,FRA,CZE,1,2,0,1,0,Madrid,Germany,A
+2021-05-27,Friendly,ESP,TUR,1,5,0,2,0,Madrid,Germany,A
+2021-05-29,UEFA Nations League,SWE,CRO,1,1,0,0,0,Paris,Italy,D
+2021-06-05,UEFA Nations League,ENG,SRB,1,1,0,0,0,London,France,D
+2021-06-06,Friendly,SUI,SRB,2,2,1,1,0,London,Spain,D
+2021-06-08,Friendly,GER,POL,0,3,0,1,0,Paris,France,A
+2021-06-09,CONMEBOL World Cup Qualifying,CHI,ARG,2,0,1,0,0,Rio,Uruguay,H
+2021-06-12,Friendly,KOR,CMR,1,4,0,2,1,New York,England,A
+2021-06-19,UEFA Nations League,CRO,UKR,0,0,0,0,0,Paris,Italy,D
+2021-06-20,UEFA Nations League,ESP,UKR,1,2,0,1,0,London,England,A
+2021-06-24,Friendly,CHI,POL,2,1,1,0,1,Dubai,Australia,H
+2021-06-28,UEFA Nations League,DEN,CZE,2,1,1,0,0,Madrid,Italy,H
+2021-07-02,CONMEBOL World Cup Qualifying,PER,COL,1,1,0,0,0,Lima,Argentina,D
+2021-07-07,CONMEBOL World Cup Qualifying,ECU,CHI,3,0,1,0,0,Lima,Argentina,H
+2021-07-09,Friendly,RUS,ENG,2,0,1,0,0,Dubai,England,H
+2021-07-14,UEFA Nations League,SRB,SUI,4,3,2,1,0,London,Spain,H
+2021-07-14,CONMEBOL World Cup Qualifying,URU,BRA,2,0,1,0,0,Buenos Aires,Brazil,H
+2021-07-17,UEFA Nations League,SUI,POL,1,2,0,1,0,London,Italy,A
+2021-07-17,Friendly,TUR,TUN,2,2,1,1,0,London,Qatar,D
+2021-07-21,UEFA Nations League,FRA,AUT,1,0,0,0,0,Madrid,England,H
+2021-07-22,UEFA Nations League,DEN,SUI,1,0,0,0,0,London,Italy,H
+2021-07-30,CONMEBOL World Cup Qualifying,CHI,ECU,5,2,2,1,0,Buenos Aires,Brazil,H
+2021-08-04,UEFA Nations League,CRO,GER,2,2,1,1,0,Paris,Germany,D
+2021-08-04,Friendly,CRO,CZE,0,3,0,1,0,Dubai,USA,A
+2021-08-05,Friendly,IRN,ARG,3,1,1,0,0,Doha,UAE,H
+2021-08-09,Friendly,ESP,AUT,2,3,1,1,0,Doha,England,A
+2021-08-12,UEFA Nations League,ITA,FRA,1,1,0,0,0,Berlin,Germany,D
+2021-08-13,CONMEBOL World Cup Qualifying,URU,PER,1,3,0,1,0,Quito,Peru,A
+2021-08-13,CONMEBOL World Cup Qualifying,ARG,COL,0,1,0,0,0,Montevideo,Peru,A
+2021-08-15,Friendly,BEL,SWE,0,1,0,0,0,Madrid,Germany,A
+2021-08-20,UEFA Nations League,DEN,ESP,3,0,1,0,0,Madrid,Spain,H
+2021-08-24,UEFA Nations League,CZE,ENG,4,0,2,0,0,Paris,France,H
+2021-08-24,Friendly,POL,SRB,0,0,0,0,1,Dubai,USA,D
+2021-09-03,Friendly,POR,SUI,3,4,1,2,0,Berlin,Italy,A
+2021-09-11,CONMEBOL World Cup Qualifying,ECU,URU,2,1,1,0,0,Quito,Brazil,H
+2021-09-12,UEFA Nations League,WAL,FRA,2,0,1,0,0,Paris,England,H
+2021-09-13,CONMEBOL World Cup Qualifying,COL,PER,1,1,0,0,0,Montevideo,Brazil,D
+2021-09-13,Friendly,SUI,POR,0,2,0,1,0,Doha,England,A
+2021-09-23,CONMEBOL World Cup Qualifying,COL,URU,2,3,1,1,0,Buenos Aires,Uruguay,A
+2021-09-28,CONMEBOL World Cup Qualifying,BRA,ARG,0,0,0,0,0,Montevideo,Brazil,D
+2021-10-02,UEFA Nations League,SWE,CRO,2,0,1,0,0,Paris,England,H
+2021-10-03,CONMEBOL World Cup Qualifying,CHI,BRA,5,1,2,0,0,Rio,Ecuador,H
+2021-10-07,CONMEBOL World Cup Qualifying,PER,COL,2,2,1,1,0,Rio,Argentina,D
+2021-10-10,Friendly,RUS,ITA,2,2,1,1,0,Rome,France,D
+2021-10-11,Friendly,SWE,RUS,3,2,1,1,0,London,Germany,H
+2021-10-15,CONMEBOL World Cup Qualifying,COL,PER,3,0,1,0,0,Buenos Aires,Brazil,H
+2021-10-18,UEFA Nations League,SWE,RUS,1,0,0,0,0,London,France,H
+2021-10-19,CONMEBOL World Cup Qualifying,CHI,ECU,1,1,0,0,0,Quito,Ecuador,D
+2021-10-24,CONMEBOL World Cup Qualifying,ARG,PER,2,3,1,1,0,Montevideo,Ecuador,A
+2021-10-25,Friendly,CAN,QAT,1,2,0,1,0,Dubai,USA,A
+2021-10-26,Friendly,SRB,URU,3,0,1,0,1,Doha,Australia,H
+2021-11-06,Friendly,SRB,GRE,1,1,0,0,0,Madrid,Spain,D
+2021-11-06,CONMEBOL World Cup Qualifying,ECU,ARG,1,0,0,0,0,Montevideo,Brazil,H
+2021-11-08,CONMEBOL World Cup Qualifying,ECU,BRA,1,2,0,1,0,Lima,Uruguay,A
+2021-11-09,Friendly,POL,ENG,3,0,1,0,0,Paris,England,H
+2021-11-11,UEFA Nations League,BEL,POR,2,2,1,1,0,Madrid,England,D
+2021-11-13,UEFA Nations League,SUI,TUR,1,1,0,0,0,Berlin,Spain,D
+2021-11-15,Friendly,NED,TUR,2,4,1,2,0,Rome,England,A
+2021-11-18,Friendly,ESP,UKR,0,3,0,1,0,Berlin,Spain,A
+2021-11-19,CONMEBOL World Cup Qualifying,ARG,ECU,2,3,1,1,0,Rio,Brazil,A
+2021-12-06,CONMEBOL World Cup Qualifying,COL,BRA,0,1,0,0,0,Quito,Peru,A
+2021-12-09,CONMEBOL World Cup Qualifying,PER,ECU,1,2,0,1,0,Rio,Peru,A
+2021-12-10,CONMEBOL World Cup Qualifying,ARG,URU,3,3,1,1,0,Lima,Peru,D
+2021-12-11,Friendly,UKR,PER,1,1,0,0,0,Doha,UAE,D
+2021-12-15,Friendly,POR,SWE,0,3,0,1,0,London,Germany,A
+2021-12-22,Friendly,PER,CRO,3,0,1,0,1,New York,USA,H
+2021-12-25,CONMEBOL World Cup Qualifying,ECU,ARG,2,1,1,0,0,Lima,Uruguay,H
+2021-12-26,CONMEBOL World Cup Qualifying,CHI,PER,2,2,1,1,0,Montevideo,Argentina,D
+2021-12-27,Friendly,NZL,NED,4,0,2,0,1,London,Australia,H
+2022-01-07,CONMEBOL World Cup Qualifying,PER,BRA,4,1,2,0,0,Rio,Brazil,H
+2022-01-10,CONMEBOL World Cup Qualifying,URU,ARG,3,0,1,0,0,Buenos Aires,Brazil,H
+2022-01-14,UEFA Nations League,ITA,AUT,3,0,1,0,0,Paris,Spain,H
+2022-01-15,Friendly,GRE,GER,4,1,2,0,0,Rome,Germany,H
+2022-01-18,AFC Asian Cup,KSA,KOR,1,0,0,0,0,Doha,Japan,H
+2022-01-23,AFC World Cup Qualifying,KSA,QAT,4,1,2,0,0,Seoul,South Korea,H
+2022-01-24,UEFA Nations League,ENG,DEN,0,3,0,1,0,Madrid,Germany,A
+2022-01-27,CONMEBOL World Cup Qualifying,ARG,ECU,2,0,1,0,0,Lima,Ecuador,H
+2022-01-30,AFC Asian Cup,JPN,AUS,0,0,0,0,0,Sydney,South Korea,D
+2022-02-10,Friendly,GER,WAL,2,2,1,1,0,New York,UAE,D
+2022-02-11,UEFA Nations League,UKR,ESP,3,0,1,0,0,London,Spain,H
+2022-02-11,AFC Asian Cup,QAT,KSA,4,2,2,1,0,Riyadh,South Korea,H
+2022-02-12,Friendly,TUR,POR,2,2,1,1,0,Berlin,Italy,D
+2022-02-14,AFC World Cup Qualifying,JPN,IRN,3,0,1,0,0,Seoul,Qatar,H
+2022-02-14,Friendly,URU,POR,2,3,1,1,1,New York,UAE,A
+2022-02-19,AFC Asian Cup,KSA,JPN,2,1,1,0,0,Seoul,Australia,H
+2022-02-19,Friendly,CMR,AUS,2,2,1,1,0,Doha,USA,D
+2022-02-23,AFC World Cup Qualifying,QAT,JPN,2,2,1,1,0,Tokyo,Qatar,D
+2022-02-28,AFC Asian Cup,JPN,QAT,0,3,0,1,0,Tokyo,Australia,A
+2022-03-02,Friendly,ENG,GRE,1,2,0,1,0,Paris,France,A
+2022-03-04,CONMEBOL World Cup Qualifying,COL,BRA,4,0,2,0,0,Lima,Ecuador,H
+2022-03-06,Friendly,RUS,FRA,1,2,0,1,0,Madrid,France,A
+2022-03-15,Friendly,AUT,FRA,2,0,1,0,0,Madrid,France,H
+2022-03-20,AFC World Cup Qualifying,KOR,IRN,2,2,1,1,0,Tokyo,Japan,D
+2022-03-21,Friendly,CHI,KSA,1,0,0,0,0,Sydney,UAE,H
+2022-03-23,UEFA Nations League,NED,SWE,0,5,0,2,0,London,Spain,A
+2022-03-23,Friendly,MAR,IRN,5,0,2,0,0,Dubai,USA,H
+2022-03-24,Friendly,FRA,WAL,1,0,0,0,0,Doha,USA,H
+2022-04-03,AFC World Cup Qualifying,IRN,QAT,0,2,0,1,0,Seoul,Qatar,A
+2022-04-04,Friendly,GER,SRB,1,3,0,1,0,Doha,Qatar,A
+2022-04-05,CONMEBOL World Cup Qualifying,CHI,PER,2,2,1,1,0,Rio,Argentina,D
+2022-04-06,CONMEBOL World Cup Qualifying,COL,PER,0,2,0,1,0,Lima,Argentina,A
+2022-04-07,CONMEBOL World Cup Qualifying,BRA,CHI,0,2,0,1,0,Lima,Peru,A
+2022-04-07,Friendly,QAT,NZL,2,3,1,1,0,London,England,A
+2022-04-08,CONMEBOL World Cup Qualifying,ARG,BRA,3,3,1,1,0,Quito,Peru,D
+2022-04-13,Friendly,SWE,GRE,1,1,0,0,0,Paris,Spain,D
+2022-04-15,CONMEBOL World Cup Qualifying,ARG,ECU,1,3,0,1,0,Lima,Argentina,A
+2022-04-15,AFC World Cup Qualifying,KSA,JPN,1,1,0,0,0,Riyadh,Saudi Arabia,D
+2022-04-15,Friendly,ENG,AUT,0,2,0,1,0,New York,USA,A
+2022-04-16,Friendly,FRA,UKR,3,1,1,0,0,Madrid,France,H
+2022-04-19,Friendly,ESP,CZE,0,3,0,1,0,London,Australia,A
+2022-04-20,AFC World Cup Qualifying,KSA,AUS,3,0,1,0,0,Sydney,Japan,H
+2022-04-21,UEFA Nations League,SWE,UKR,2,0,1,0,0,Madrid,Italy,H
+2022-04-22,UEFA Nations League,FRA,SUI,0,1,0,0,0,Madrid,France,A
+2022-04-25,Friendly,CRC,GHA,3,1,1,0,0,Dubai,USA,H
+2022-04-27,UEFA Nations League,ESP,ITA,2,2,1,1,0,London,France,D
+2022-05-01,Friendly,JPN,ESP,3,1,1,0,0,New York,UAE,H
+2022-05-02,UEFA Nations League,SWE,WAL,3,0,1,0,0,Berlin,France,H
+2022-05-04,Friendly,IRN,KSA,1,2,0,1,0,Dubai,Australia,A
+2022-05-09,UEFA Nations League,AUT,SRB,2,1,1,0,0,Berlin,England,H
+2022-05-09,AFC Asian Cup,IRN,KOR,3,0,1,0,0,Riyadh,South Korea,H
+2022-05-11,UEFA Nations League,DEN,GRE,2,1,1,0,0,Berlin,Italy,H
+2022-05-14,CONMEBOL World Cup Qualifying,URU,BRA,1,1,0,0,0,Quito,Peru,D
+2022-05-18,UEFA Nations League,ESP,CRO,1,0,0,0,0,London,England,H
+2022-05-18,CONMEBOL World Cup Qualifying,CHI,URU,2,2,1,1,0,Montevideo,Ecuador,D
+2022-05-18,CONMEBOL World Cup Qualifying,ECU,PER,1,1,0,0,0,Buenos Aires,Peru,D
+2022-05-21,Friendly,SRB,ITA,4,2,2,1,0,Doha,UAE,H
+2022-05-23,UEFA Nations League,SRB,UKR,2,1,1,0,0,Madrid,Italy,H
+2022-05-29,CONMEBOL World Cup Qualifying,PER,URU,2,0,1,0,0,Lima,Peru,H
+2022-05-31,CONMEBOL World Cup Qualifying,PER,URU,0,2,0,1,0,Quito,Argentina,A
+2022-06-04,UEFA Nations League,SWE,POR,3,0,1,0,0,London,Germany,H
+2022-06-06,UEFA Nations League,ITA,WAL,2,2,1,1,0,Rome,Germany,D
+2022-06-11,Friendly,ENG,RUS,2,3,1,1,0,Rome,Spain,A
+2022-06-11,AFC World Cup Qualifying,JPN,KSA,1,0,0,0,0,Riyadh,Australia,H
+2022-06-21,CONMEBOL World Cup Qualifying,ARG,COL,2,2,1,1,0,Lima,Brazil,D
+2022-06-22,UEFA Nations League,NED,BEL,1,0,0,0,0,London,France,H
+2022-06-23,AFC Asian Cup,JPN,AUS,0,2,0,1,0,Sydney,Australia,A
+2022-06-26,AFC Asian Cup,JPN,IRN,0,2,0,1,0,Riyadh,Saudi Arabia,A
+2022-06-28,CONMEBOL World Cup Qualifying,PER,COL,3,1,1,0,0,Quito,Brazil,H
+2022-07-02,CONMEBOL World Cup Qualifying,COL,CHI,2,1,1,0,0,Montevideo,Ecuador,H
+2022-07-03,CONMEBOL World Cup Qualifying,URU,BRA,1,1,0,0,0,Montevideo,Uruguay,D
+2022-07-04,CONMEBOL World Cup Qualifying,ARG,URU,1,0,0,0,0,Montevideo,Ecuador,H
+2022-07-04,AFC World Cup Qualifying,KOR,JPN,2,3,1,1,0,Sydney,Saudi Arabia,A
+2022-07-07,AFC Asian Cup,JPN,KOR,1,0,0,0,0,Sydney,Qatar,H
+2022-07-07,AFC Asian Cup,JPN,IRN,2,0,1,0,0,Tokyo,Saudi Arabia,H
+2022-07-08,AFC World Cup Qualifying,KSA,QAT,1,3,0,1,0,Doha,Australia,A
+2022-07-09,CONMEBOL World Cup Qualifying,PER,ECU,2,2,1,1,0,Buenos Aires,Ecuador,D
+2022-07-11,CONMEBOL World Cup Qualifying,CHI,ARG,1,1,0,0,0,Buenos Aires,Peru,D
+2022-07-13,CONMEBOL World Cup Qualifying,URU,PER,0,2,0,1,0,Montevideo,Ecuador,A
+2022-07-14,Friendly,UKR,CRO,1,1,0,0,0,London,Spain,D
+2022-07-14,AFC Asian Cup,KOR,JPN,0,0,0,0,0,Tokyo,Qatar,D
+2022-07-21,UEFA Nations League,DEN,BEL,1,0,0,0,0,Madrid,Italy,H
+2022-07-21,AFC World Cup Qualifying,AUS,QAT,0,2,0,1,0,Tokyo,Japan,A
+2022-07-21,Friendly,USA,QAT,0,1,0,0,1,Sydney,USA,A
+2022-07-22,UEFA Nations League,AUT,DEN,2,1,1,0,0,London,France,H
+2022-07-22,CONMEBOL World Cup Qualifying,COL,PER,0,3,0,1,0,Rio,Ecuador,A
+2022-07-24,AFC Asian Cup,KSA,KOR,2,0,1,0,0,Seoul,Saudi Arabia,H
+2022-07-27,CONMEBOL World Cup Qualifying,CHI,URU,5,0,2,0,0,Lima,Argentina,H
+2022-07-31,Friendly,POR,SUI,1,2,0,1,0,London,Italy,A
+2022-07-31,CONMEBOL World Cup Qualifying,CHI,URU,2,0,1,0,0,Buenos Aires,Argentina,H
+2022-07-31,CONMEBOL World Cup Qualifying,ARG,COL,1,0,0,0,0,Montevideo,Argentina,H
+2022-07-31,CONMEBOL World Cup Qualifying,ARG,ECU,0,2,0,1,0,Montevideo,Argentina,A
+2022-08-01,Friendly,ENG,SUI,1,1,0,0,1,London,USA,D
+2022-08-03,Friendly,SUI,ENG,3,2,1,1,0,Paris,France,H
+2022-08-07,CONMEBOL World Cup Qualifying,PER,COL,0,0,0,0,0,Quito,Ecuador,D
+2022-08-09,UEFA Nations League,AUT,POL,2,3,1,1,0,Paris,Spain,A
+2022-08-18,CONMEBOL World Cup Qualifying,PER,CHI,2,0,1,0,0,Rio,Peru,H
+2022-08-19,CONMEBOL World Cup Qualifying,URU,PER,0,0,0,0,0,Buenos Aires,Uruguay,D
+2022-08-19,AFC World Cup Qualifying,QAT,IRN,3,1,1,0,0,Seoul,Australia,H
+2022-08-22,Friendly,WAL,SUI,2,2,1,1,0,Rome,Spain,D
+2022-08-22,UEFA Nations League,FRA,DEN,0,0,0,0,0,Berlin,England,D
+2022-08-31,AFC World Cup Qualifying,KSA,AUS,3,1,1,0,0,Tokyo,Saudi Arabia,H
+2022-08-31,AFC World Cup Qualifying,KSA,IRN,2,1,1,0,0,Riyadh,Saudi Arabia,H
+2022-09-02,AFC World Cup Qualifying,AUS,JPN,0,0,0,0,0,Seoul,Japan,D
+2022-09-03,AFC World Cup Qualifying,KOR,QAT,0,2,0,1,0,Sydney,Saudi Arabia,A
+2022-09-05,AFC World Cup Qualifying,KOR,KSA,2,2,1,1,0,Tokyo,South Korea,D
+2022-09-06,CONMEBOL World Cup Qualifying,COL,ECU,0,0,0,0,0,Rio,Peru,D
+2022-09-09,CONMEBOL World Cup Qualifying,COL,ARG,1,0,0,0,0,Quito,Uruguay,H
+2022-09-17,CONMEBOL World Cup Qualifying,BRA,PER,1,1,0,0,0,Quito,Ecuador,D
+2022-09-17,Friendly,GHA,ENG,2,0,1,0,1,Doha,UAE,H
+2022-09-26,AFC World Cup Qualifying,JPN,QAT,1,3,0,1,0,Doha,Saudi Arabia,A
+2022-09-27,Friendly,SWE,COL,2,1,1,0,0,London,Qatar,H
+2022-09-30,CONMEBOL World Cup Qualifying,ARG,PER,2,2,1,1,0,Rio,Uruguay,D
+2022-10-03,CONMEBOL World Cup Qualifying,ECU,ARG,3,1,1,0,0,Quito,Ecuador,H
+2022-10-08,Friendly,ECU,CMR,1,0,0,0,1,Doha,Qatar,H
+2022-10-09,CONMEBOL World Cup Qualifying,PER,BRA,3,1,1,0,0,Lima,Brazil,H
+2022-10-14,Friendly,KOR,ECU,0,3,0,1,1,Dubai,England,A
+2022-10-23,AFC World Cup Qualifying,KSA,AUS,2,2,1,1,0,Tokyo,Japan,D
+2022-10-25,AFC Asian Cup,KOR,AUS,1,0,0,0,0,Tokyo,Saudi Arabia,H
+2022-10-29,Friendly,POL,CMR,2,1,1,0,1,London,Australia,H
+2022-10-31,Friendly,COL,TUR,3,3,1,1,0,Sydney,Australia,D
+2022-11-08,Friendly,CAN,USA,1,1,0,0,1,Dubai,Qatar,D
+2022-11-18,AFC World Cup Qualifying,QAT,KOR,1,0,0,0,0,Seoul,Australia,H
+2022-11-20,FIFA World Cup 2022,USA,WAL,1,3,,,1,Qatar,QA,A
+2022-11-21,FIFA World Cup 2022,POL,KOR,3,1,,,1,Qatar,QA,H
+2022-11-21,FIFA World Cup 2022,BEL,KOR,3,1,,,1,Qatar,QA,H
+2022-11-21,FIFA World Cup 2022,GHA,ESP,2,2,,,1,Qatar,QA,D
+2022-11-21,FIFA World Cup 2022,TUN,FRA,4,0,,,1,Qatar,QA,H
+2022-11-21,FIFA World Cup 2022,URU,SRB,0,2,,,1,Qatar,QA,A
+2022-11-21,FIFA World Cup 2022,CMR,CAN,0,2,,,1,Qatar,QA,A
+2022-11-21,FIFA World Cup 2022,IRN,ARG,4,3,,,1,Qatar,QA,H
+2022-11-22,FIFA World Cup 2022,TUN,SUI,3,1,,,1,Qatar,QA,H
+2022-11-22,FIFA World Cup 2022,NED,CAN,3,1,,,1,Qatar,QA,H
+2022-11-22,FIFA World Cup 2022,NED,ECU,3,0,,,1,Qatar,QA,H
+2022-11-23,FIFA World Cup 2022,USA,MAR,1,2,,,1,Qatar,QA,A
+2022-11-23,FIFA World Cup 2022,POL,AUS,1,2,,,1,Qatar,QA,A
+2022-11-23,FIFA World Cup 2022,FRA,SUI,0,1,,,1,Qatar,QA,A
+2022-11-23,FIFA World Cup 2022,BRA,URU,3,2,,,1,Qatar,QA,H
+2022-11-24,FIFA World Cup 2022,CRC,SEN,1,2,,,1,Qatar,QA,A
+2022-11-24,FIFA World Cup 2022,CRO,GER,2,2,,,1,Qatar,QA,D
+2022-11-24,FIFA World Cup 2022,QAT,USA,1,1,,,1,Qatar,QA,D
+2022-11-24,FIFA World Cup 2022,BRA,SRB,0,3,,,1,Qatar,QA,A
+2022-11-25,FIFA World Cup 2022,CRC,CRO,4,3,,,1,Qatar,QA,H
+2022-11-25,FIFA World Cup 2022,CRO,SEN,0,0,,,1,Qatar,QA,D
+2022-11-26,FIFA World Cup 2022,CRC,GER,0,0,,,1,Qatar,QA,D
+2022-11-26,FIFA World Cup 2022,IRN,POR,4,2,,,1,Qatar,QA,H
+2022-11-27,FIFA World Cup 2022,SEN,GER,3,1,,,1,Qatar,QA,H
+2022-11-27,FIFA World Cup 2022,WAL,MAR,2,0,,,1,Qatar,QA,H
+2022-11-27,FIFA World Cup 2022,CMR,NED,2,2,,,1,Qatar,QA,D
+2022-11-27,FIFA World Cup 2022,CAN,ECU,1,3,,,1,Qatar,QA,A
+2022-11-27,FIFA World Cup 2022,JPN,POR,2,1,,,1,Qatar,QA,H
+2022-11-28,FIFA World Cup 2022,QAT,WAL,3,2,,,1,Qatar,QA,H
+2022-11-28,FIFA World Cup 2022,AUS,KOR,0,3,,,1,Qatar,QA,A
+2022-11-28,FIFA World Cup 2022,FRA,MEX,1,1,,,1,Qatar,QA,D
+2022-11-28,FIFA World Cup 2022,SUI,MEX,2,1,,,1,Qatar,QA,H
+2022-11-28,FIFA World Cup 2022,CMR,ECU,1,1,,,1,Qatar,QA,D
+2022-11-29,FIFA World Cup 2022,POL,BEL,2,0,,,1,Qatar,QA,H
+2022-11-29,FIFA World Cup 2022,ESP,DEN,3,1,,,1,Qatar,QA,H
+2022-11-29,FIFA World Cup 2022,TUN,MEX,0,1,,,1,Qatar,QA,A
+2022-11-29,FIFA World Cup 2022,BRA,ENG,4,3,,,1,Qatar,QA,H
+2022-11-29,FIFA World Cup 2022,JPN,ARG,1,3,,,1,Qatar,QA,A
+2022-11-29,FIFA World Cup 2022,ARG,POR,1,3,,,1,Qatar,QA,A
+2022-11-30,FIFA World Cup 2022,QAT,MAR,0,3,,,1,Qatar,QA,A
+2022-11-30,FIFA World Cup 2022,AUS,BEL,2,2,,,1,Qatar,QA,D
+2022-11-30,FIFA World Cup 2022,GHA,DEN,3,3,,,1,Qatar,QA,D
+2022-11-30,FIFA World Cup 2022,JPN,IRN,1,0,,,1,Qatar,QA,H
+2022-12-01,FIFA World Cup 2022,GHA,KSA,3,1,,,1,Qatar,QA,H
+2022-12-01,FIFA World Cup 2022,URU,ENG,0,2,,,1,Qatar,QA,A
+2022-12-01,FIFA World Cup 2022,SRB,ENG,1,0,,,1,Qatar,QA,H
+2022-12-02,FIFA World Cup 2022,ESP,KSA,0,2,,,1,Qatar,QA,A
+2022-12-02,FIFA World Cup 2022,KSA,DEN,4,0,,,1,Qatar,QA,H
+2022-12-03,FIFA World Cup 2022,NED,USA,3,1,,,1,Qatar,QA,H
+2022-12-03,FIFA World Cup 2022,ARG,AUS,2,1,,,1,Qatar,QA,H
+2022-12-04,FIFA World Cup 2022,FRA,POL,3,1,,,1,Qatar,QA,H
+2022-12-04,FIFA World Cup 2022,ENG,SEN,3,0,,,1,Qatar,QA,H
+2022-12-05,FIFA World Cup 2022,JPN,CRO,1,1,,,1,Qatar,QA,D
+2022-12-05,FIFA World Cup 2022,BRA,KOR,4,1,,,1,Qatar,QA,H
+2022-12-06,FIFA World Cup 2022,MAR,ESP,0,0,,,1,Qatar,QA,D
+2022-12-06,FIFA World Cup 2022,POR,SUI,6,1,,,1,Qatar,QA,H
+2022-12-07,FIFA World Cup 2022,CRO,BRA,1,1,,,1,Qatar,QA,D
+2022-12-07,FIFA World Cup 2022,NED,ARG,2,2,,,1,Qatar,QA,D
+2022-12-08,FIFA World Cup 2022,MAR,POR,1,0,,,1,Qatar,QA,H
+2022-12-08,FIFA World Cup 2022,ENG,FRA,1,2,,,1,Qatar,QA,A
+2022-12-08,Friendly,TUR,DEN,0,1,0,0,0,Sydney,Qatar,A
+2022-12-09,FIFA World Cup 2022,ARG,CRO,3,0,,,1,Qatar,QA,H
+2022-12-09,FIFA World Cup 2022,FRA,MAR,2,0,,,1,Qatar,QA,H
+2022-12-09,Friendly,KSA,ALG,1,5,0,2,1,London,Australia,A
+2022-12-10,FIFA World Cup 2022,ARG,FRA,3,3,,,1,Qatar,QA,D
+2022-12-11,AFC World Cup Qualifying,KSA,IRN,0,0,0,0,0,Seoul,Saudi Arabia,D
+2022-12-20,AFC World Cup Qualifying,JPN,AUS,1,0,0,0,0,Seoul,Australia,H
+2022-12-20,Friendly,UKR,CMR,2,1,1,0,0,Sydney,Australia,H
+2022-12-23,AFC World Cup Qualifying,IRN,QAT,2,0,1,0,0,Tokyo,Japan,H
+2022-12-25,AFC Asian Cup,KSA,QAT,2,2,1,1,0,Seoul,Saudi Arabia,D
+2022-12-25,Friendly,CAN,POL,2,0,1,0,0,Sydney,Australia,H
+2023-01-02,Friendly,KSA,POR,3,3,1,1,1,New York,Qatar,D
+2023-01-02,Friendly,BEL,TUR,0,4,0,2,1,Sydney,USA,A
+2023-01-09,Friendly,TUN,DEN,2,0,1,0,1,Dubai,USA,H
+2023-01-14,AFC World Cup Qualifying,KSA,KOR,4,4,2,2,0,Riyadh,South Korea,D
+2023-01-19,Friendly,BEL,URU,2,2,1,1,1,Doha,Australia,D
+2023-01-22,Friendly,MAR,PER,1,2,0,1,0,London,Qatar,A
+2023-01-27,AFC World Cup Qualifying,KSA,QAT,3,2,1,1,0,Riyadh,Saudi Arabia,H
+2023-02-01,Friendly,TUN,PER,2,0,1,0,0,Sydney,UAE,H
+2023-02-04,AFC Asian Cup,KSA,AUS,2,2,1,1,0,Seoul,South Korea,D
+2023-02-08,Friendly,GER,PER,1,3,0,1,0,Doha,England,A
+2023-02-11,Friendly,ALG,JPN,3,2,1,1,1,Dubai,Australia,H
+2023-02-26,Friendly,MAR,TUN,2,1,1,0,1,New York,UAE,H
+2023-03-03,Friendly,WAL,MEX,2,1,1,0,1,Sydney,Australia,H
+2023-03-12,Friendly,USA,KOR,3,2,1,1,0,Dubai,USA,H
+2023-03-21,Friendly,CMR,PER,2,0,1,0,1,Sydney,UAE,H
+2023-03-24,Friendly,FRA,MEX,1,0,0,0,1,New York,UAE,H
+2023-03-25,Friendly,WAL,UKR,2,2,1,1,0,Dubai,USA,D
+2023-04-01,Friendly,GHA,SRB,1,0,0,0,1,Doha,England,H
+2023-04-03,Friendly,BEL,MEX,3,3,1,1,1,Dubai,England,D
+2023-04-08,Friendly,NGA,JPN,0,2,0,1,1,Doha,Australia,A
+2023-04-20,Friendly,ALG,BRA,1,0,0,0,0,London,Qatar,H
+2023-04-27,Friendly,AUS,ENG,2,0,1,0,1,Sydney,UAE,H

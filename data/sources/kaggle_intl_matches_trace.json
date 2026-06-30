@@ -1,0 +1,10 @@
+{
+  "source_id": "kaggle_intl_matches",
+  "source_name": "International Football Results from 1872 to 2024",
+  "source_url": "https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017",
+  "source_file": "data\\data\\raw\\matches\\kaggle_intl_matches.csv",
+  "download_date": "2026-06-30T19:34:18.982207",
+  "data_version": "kaggle@martj42/international-football-results-from-1872-to-2017",
+  "raw_file_hash": "a30f5a34fd339d67563289e1ef745028663f5f12b2aad6eba7765efc5bc6823e",
+  "notes": "通过 kagglehub 下载，缓存目录: C:\\Users\\34964\\.cache\\kagglehub\\datasets\\martj42\\international-football-results-from-1872-to-2017\\versions\\128"
+}

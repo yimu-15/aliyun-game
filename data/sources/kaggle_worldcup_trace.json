@@ -1,0 +1,10 @@
+{
+  "source_id": "kaggle_worldcup",
+  "source_name": "FIFA World Cup Dataset",
+  "source_url": "https://www.kaggle.com/datasets/abecklas/fifa-world-cup",
+  "source_file": "data\\data\\raw\\matches\\kaggle_worldcup_matches.csv",
+  "download_date": "2026-06-30T19:34:23.810768",
+  "data_version": "kaggle@abecklas/fifa-world-cup",
+  "raw_file_hash": "b2442f83f4e2fc0796225dd5a464582ab6ab146f468eeb1067316e90153e9ee1",
+  "notes": "通过 kagglehub 下载，缓存目录: C:\\Users\\34964\\.cache\\kagglehub\\datasets\\abecklas\\fifa-world-cup\\versions\\5"
+}
