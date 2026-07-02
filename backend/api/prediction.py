@@ -1,11 +1,47 @@
-"""预测 API — 冠军预测、赛程树、单场分析"""
+"""预测 API — 冠军预测、赛程树、单场分析、数据刷新"""
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, BackgroundTasks
 
 from backend.services.prediction_service import PredictionService
 
 router = APIRouter()
 _service = PredictionService()
+
+
+@router.post("/refresh")
+def refresh_data(background_tasks: BackgroundTasks):
+    """触发实时数据采集 + 重新预测 (后台任务)"""
+    try:
+        from data_collection.live_fetcher import fetch_all
+        from backend.services.prediction_service import PredictionService
+        import threading
+
+        def _refresh():
+            fetch_all(force=True)
+            PredictionService._global_instance = None  # 清缓存
+
+        thread = threading.Thread(target=_refresh, daemon=True)
+        thread.start()
+
+        return {
+            "status": "started",
+            "message": "数据刷新已在后台启动，预计 30 秒完成",
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/refresh/status")
+def refresh_status():
+    """检查 refreshed 数据是否就绪"""
+    from pathlib import Path
+    p = Path("data/processed/current_teams_power.csv")
+    if p.exists():
+        import os
+        mtime = os.path.getmtime(p)
+        age = __import__('time').time() - mtime
+        return {"ready": True, "teams_file": str(p), "age_seconds": round(age)}
+    return {"ready": False, "message": "current_teams_power.csv 未生成"}
 
 
 @router.get("/champion")

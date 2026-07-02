@@ -1,0 +1,22 @@
+# =============================================================================
+# Streamlit 主题配置 — 科技体育风格
+# =============================================================================
+
+[theme]
+primaryColor = "#1f77b4"
+backgroundColor = "#0D1B2A"
+secondaryBackground = "#14273D"
+textColor = "#F0F0F0"
+font = "sans serif"
+
+[server]
+port = 8501
+headless = true
+enableCORS = true
+enableXsrfProtection = true
+maxUploadSize = 50
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501

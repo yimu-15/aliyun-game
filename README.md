@@ -47,7 +47,12 @@ worldcup-predictor/
 ├── docs/                   # 文档与 PPT 材料
 ├── tests/                  # 单元测试
 ├── pyproject.toml          # 项目配置与依赖
+├── requirements.txt        # pip 依赖清单 (Streamlit Cloud 用)
+├── streamlit_app.py        # Streamlit Cloud 入口文件
+├── .streamlit/config.toml  # Streamlit 主题配置
 ├── .env.example            # 环境变量模板
+├── Dockerfile              # Docker 构建文件
+├── docker-compose.yml      # Docker 编排
 └── README.md               # 本文件
 ```
 
@@ -93,8 +98,13 @@ python backend/main.py
 
 ### 5. 访问
 
-- 前端: http://localhost:8501
-- 后端 API: http://localhost:8000/docs
+- 前端: http://football-games:8501
+- 后端 API: http://football-games:8000/docs
+
+> **首次使用需配置域名:** 以管理员身份运行 PowerShell 执行:
+> ```powershell
+> Add-Content -Path "$env:SystemRoot\System32\drivers\etc\hosts" -Value "`n127.0.0.1 football-games" -Force
+> ```
 
 ## 技术栈
 
@@ -137,6 +147,34 @@ python backend/main.py
 - [Kaggle - FIFA 23 Player Dataset](https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset)
 - [openfootball/world-cup (GitHub)](https://github.com/openfootball/world-cup)
 - [eloratings.net](https://www.eloratings.net/)
+
+## Streamlit Cloud 部署
+
+### 前提条件
+1. 代码已推送到 GitHub 公开仓库
+2. GitHub 仓库根目录有 `streamlit_app.py` 和 `requirements.txt`
+
+### 部署步骤
+
+```bash
+# 1. 确保 GitHub 仓库连接正确
+git remote -v
+# → origin  https://github.com/YIMU-15/world-cup-prediction-agent.git
+
+# 2. 提交所有文件
+git add .
+git commit -m "chore: 添加 Streamlit Cloud 部署配置"
+git push origin main
+
+# 3. 打开 https://share.streamlit.io
+# 4. 点击 "New app" → 选择仓库 → 入口文件: streamlit_app.py
+# 5. 点击 "Deploy!"
+```
+
+### 注意事项
+- 项目不依赖外部 API，使用内置参考数据，无需配置 secrets
+- `.streamlit/config.toml` 已配置深色科技主题
+- 首次加载需 1-2 分钟 (安装依赖)
 
 ## License
 

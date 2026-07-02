@@ -61,7 +61,7 @@ class Paths:
 class BackendConfig:
     """FastAPI 后端配置"""
 
-    HOST = os.getenv("BACKEND_HOST", "0.0.0.0")
+    HOST = os.getenv("BACKEND_HOST", "localhost")
     PORT = int(os.getenv("BACKEND_PORT", "8000"))
     RELOAD = os.getenv("BACKEND_RELOAD", "true").lower() == "true"
     TITLE = "世界杯冠军预测 Agent API"

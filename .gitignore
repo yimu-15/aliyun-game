@@ -40,6 +40,11 @@ data/logs/*.log
 .DS_Store
 Thumbs.db
 
+# Office temp files
+~$*.pptx
+~$*.docx
+~$*.xlsx
+
 # Streamlit
 .streamlit/secrets.toml
 

@@ -10,7 +10,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from config.settings import backend
 from backend.api.prediction import router as prediction_router
-from backend.api.data import router as data_router
 
 app = FastAPI(
     title=backend.TITLE,
@@ -26,7 +25,6 @@ app.add_middleware(
 )
 
 app.include_router(prediction_router, prefix="/api/prediction", tags=["预测"])
-app.include_router(data_router, prefix="/api/data", tags=["数据"])
 
 
 @app.get("/api/health")
@@ -36,6 +34,12 @@ def health_check():
 
 def start():
     """入口函数 — 通过 pyproject.toml [project.scripts] 调用"""
+    print(f"\n{'='*50}")
+    print(f"  世界杯冠军预测 Agent — API 服务")
+    print(f"  地址: http://localhost:{backend.PORT}")
+    print(f"  文档: http://localhost:{backend.PORT}/docs")
+    print(f"  健康: http://localhost:{backend.PORT}/api/health")
+    print(f"{'='*50}\n")
     uvicorn.run(
         "backend.main:app",
         host=backend.HOST,
