@@ -96,16 +96,6 @@ streamlit run app/main.py
 python backend/main.py
 ```
 
-### 5. 访问
-
-- 前端: http://football-games:8501
-- 后端 API: http://football-games:8000/docs
-
-> **首次使用需配置域名:** 以管理员身份运行 PowerShell 执行:
-> ```powershell
-> Add-Content -Path "$env:SystemRoot\System32\drivers\etc\hosts" -Value "`n127.0.0.1 football-games" -Force
-> ```
-
 ## 技术栈
 
 | 层级 | 技术 |
@@ -175,7 +165,3 @@ git push origin main
 - 项目不依赖外部 API，使用内置参考数据，无需配置 secrets
 - `.streamlit/config.toml` 已配置深色科技主题
 - 首次加载需 1-2 分钟 (安装依赖)
-
-## License
-
-MIT
