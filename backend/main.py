@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from config.settings import backend
 from backend.api.prediction import router as prediction_router
+from backend.api.admin import router as admin_router
 
 app = FastAPI(
     title=backend.TITLE,
@@ -25,6 +26,7 @@ app.add_middleware(
 )
 
 app.include_router(prediction_router, prefix="/api/prediction", tags=["预测"])
+app.include_router(admin_router, prefix="/api/admin", tags=["API管理"])
 
 
 @app.get("/api/health")

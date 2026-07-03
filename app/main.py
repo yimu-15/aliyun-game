@@ -48,7 +48,7 @@ section[data-testid="stSidebar"] { background:linear-gradient(180deg,#0a1525,#0D
 # ── 侧边栏 ──
 with st.sidebar:
     st.markdown("## 🏆 世界杯预测")
-    page = st.radio("导航", ["🏠 Home","📊 球队实力榜","🌳 赛程对阵树","🔍 比分预测","📄 Report"],
+    page = st.radio("导航", ["🏠 Home","📊 球队实力榜","🌳 赛程对阵树","🔍 比分预测","📄 Report","⚙️ API 管理"],
                      label_visibility="collapsed")
     st.divider()
 
@@ -88,6 +88,15 @@ with st.sidebar:
     try:
         requests.get("http://localhost:8000/api/health", timeout=2)
         st.success("🟢 Backend API 在线")
+        st.markdown("""
+        <div style="font-size:0.8rem;line-height:1.6;">
+        📖 <a href="http://localhost:8000/docs" target="_blank">Swagger 文档</a><br>
+        🏆 <a href="http://localhost:8000/api/prediction/champion" target="_blank">冠军排行 API</a><br>
+        🌳 <a href="http://localhost:8000/api/prediction/bracket" target="_blank">赛程树 API</a><br>
+        🔍 <a href="http://localhost:8000/api/prediction/match/BRA/ARG" target="_blank">单场预测 API</a><br>
+        🔄 <a href="http://localhost:8000/api/prediction/refresh/status" target="_blank">刷新状态 API</a>
+        </div>
+        """, unsafe_allow_html=True)
     except Exception:
         st.warning("🟡 Backend API 离线 (预测仍可用)")
     st.caption("Model v2.0 | localhost:8501")
@@ -171,6 +180,10 @@ elif page == "🔍 比分预测":
 elif page == "📄 Report":
     from app.report import render
     render(results, team_map, team_ratings, groups, n_sim)
+
+elif page == "⚙️ API 管理":
+    from app.api_manager import render
+    render()
 
 # ── 页脚 ──
 st.markdown('<div class="app-footer">世界杯冠军预测 Agent v2.0 | 可解释 · 可视化 · 全流程 | localhost:8501</div>', unsafe_allow_html=True)

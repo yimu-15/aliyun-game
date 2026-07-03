@@ -1,0 +1,22 @@
+[
+  {
+    "id": "football-data",
+    "name": "Football-Data.org",
+    "url": "https://api.football-data.org/v4/",
+    "api_key": "2e0828890687497591a69119c6aed07d",
+    "category": "football",
+    "description": "官方足球数据 API，提供世界杯/联赛球队、积分榜、赛程",
+    "status": "unknown",
+    "last_checked": null
+  },
+  {
+    "id": "fifa-ranking",
+    "name": "FIFA 官方排名",
+    "url": "https://inside.fifa.com/fifa-world-ranking",
+    "api_key": "",
+    "category": "football",
+    "description": "FIFA 官网男足国家队排名页面（网页抓取）",
+    "status": "unknown",
+    "last_checked": null
+  }
+]
